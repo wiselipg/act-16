@@ -2,152 +2,177 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sliding Navigation</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
-            min-height: 100vh;
             background-image: url(beach.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     
-        nav {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 30%;
-            height: 50%;
-            opacity: 60%;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            
-        }
-        nav li {
-            margin-bottom: 10px;
-            font-size: 30px;
-           
-        }
-        nav ul li {
-            border: 4px solid #555;
-        }
-        nav a {
-            text-decoration: none;
-            color: black;
-            padding: 10px;
-        }
-        nav a:hover {
-            background-color: pink;
-            opacity: 80%;
-        }
-        nav li a{
-            padding: 8px 16px;
-        }
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: white;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-        .sidenav a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 25px;
-            color: black;
-            display: block;
-            transition: 0.3s;
-        }
-        .sidenav a:hover {
-            background-color: pink;
-        }
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-        footer{
-            color: white;
-            position: absolute;
-            top: 550px;
-        }
+  }
+  
+  .nav-container {
+    width: 670px;
+    height: 490px;
+    position: relative;
+    margin: 50px auto;
+    overflow: hidden;
+    opacity: 70%;
+  }
+  
+  .nav-box {
+    align-items: left;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 0cqmax;
+    border-radius: 10px;
+    top: 0;
+    left: 100%;
+    background: linear-gradient(93deg, rgb(252, 252, 252)    , pink, rgb(170, 28, 123));
+    padding: 2px;
+    box-sizing: border-box;
+    transition: left 0.5s
+  }
+  
+  .nav-box#main-nav {
+    left: 0;
+  }
+  
+  .nav-box.active {
+    left: 0;
+  }
+  
+  .nav-link,
+  .back-link {
+    cursor: pointer;
+    color:  black;
+    text-decoration: none;
+  }
+  button{
+    padding: 50px;
+   text-align: center;
+    background-color: pink;
+    height: 120px;
+    width: 620px;
+    border-radius: 5px;
+    border-inline-start-width: 0cqmax;
+    display: flex;
+    align-self: left;
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif  ;
+
+  }
+  button:hover {
+    background-color: rgb(201, 139, 149);
+  }
+  a{
+    text-decoration: none;
+
+  }
+  header{
+    
+    text-align: center;
+    border-inline-start-width: 0cqmax;
+    
+
+  }
+  footer{
+    
+    text-align: center;
+    border-inline-start-width: 0cqmax;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+
+  }
+  .back-link {
+    font-size: 50px;
+  }
     </style>
 </head>
 <body>
-    <nav>
+    <header>
+        <div class="header">
+        <h1 style="color: white;">ACTIVITY 16 SLIDING NAVIGATION</h1>
+        </div>
+    </header>
+  <div class="nav-container">
+    <div class="nav-box" id="main-nav">
+      <ul>
+        <button><li><a href="#" class="nav-link" data-target="about-nav">About</a></li></button>
+        <button><li><a href="#" class="nav-link" data-target="products-nav">Products</a></li></button>
+        <button><li><a href="#" class="nav-link" data-target="resources-nav">Resources</a></li></button>
+        <button><li><a href="#" class="nav-link" data-target="contact-nav">Contact</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="about-nav">
+      <a href="#" class="back-link" data-target="main-nav">←</a>
+      <ul>
+        <button><li><a href="#" class="nav-link" data-target="media-nav">Media</a></li></button>
+        <button><li><a href="#">History</a></li></button>
+        <button><li><a href="#">Staff</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="media-nav">
+      <a href="#" class="back-link" data-target="about-nav">←</a>
+      <ul>
+        <button><li><a href="#">Brochures</a></li></button>
+        <button><li><a href="#">Videos</a></li></button>
+        <button><li><a href="#">Downloads</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="products-nav">
+      <a href="#" class="back-link" data-target="main-nav">←</a>
+      <ul>
+        <button><li><a href="#">Widgets</a></li></button>
+        <button><li><a href="#">Contraptions</a></li></button>
+        <button><li><a href="#">Gizmos</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="resources-nav">
+      <a href="#" class="back-link" data-target="main-nav">←</a>
+      <ul>
+        <button><li><a href="#">Manuals</a></li></button>
+        <button><li><a href="#">Knowledgebase</a></li></button>
+        <button><li><a href="#">Support</a></li></button>
+      </ul>
+    </div>
+
+    <div class="nav-box" id="contact-nav">
+        <a href="#" class="back-link" data-target="about-nav">←</a>
         <ul>
-            <li><a href="#About" id="aboutBtn">About</a></li>
-            <li><a href="#Services" id="servicesBtn">Services</a></li>
-            <li><a href="#Clients" id="clientsBtn">Clients</a></li>
-            <li><a href="#Contact" id="contactBtn">Contact</a></li>
+          <button><li><a href="#">Phone Number</a></li></button>
+          <button><li><a href="#">Social Media Account</a></li></button>
+          <button><li><a href="#">User</a></li></button>
         </ul>
-    </nav>
-    <div class="sidenav" id="mySidenav">
-        <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
-        <a href="act16.html">Link 1</a>
-        <a href="act16.html">Link 2</a>
-        <a href="act16.html">Link 3</a>
-        <a href="act16.html">Link 4</a>
-    </div>
-    <div id="main">
-        <!-- Content here -->
-    </div>
+  </div>
+<!-- JAVASCRIPT-->
+  <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+const backLinks = document.querySelectorAll('.back-link');
+const navBoxes = document.querySelectorAll('.nav-box');
 
-    <footer>
-        sir maawa ka samin sir huhu.....perfect cutiee
-    </footer>
-    <script>
-        document.getElementById('aboutBtn').addEventListener('click', function() {
-            openNav();
-        });
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById(link.dataset.target);
+    navBoxes.forEach(box => box.classList.remove('active'));
+    target.classList.add('active');
+  });
+});
 
-        document.getElementById('servicesBtn').addEventListener('click', function() {
-            openNav();
-        });
-
-        document.getElementById('clientsBtn').addEventListener('click', function() {
-            openNav();
-        });
-
-        document.getElementById('contactBtn').addEventListener('click', function() {
-            openNav();
-        });
-
-        document.getElementById('closeBtn').addEventListener('click', function() {
-            closeNav();
-        });
-
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
+backLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById(link.dataset.target);
+    navBoxes.forEach(box => box.classList.remove('active'));
+    target.classList.add('active');
+  });
+});
+  </script>
 </body>
 </html>
